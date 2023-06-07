@@ -1,0 +1,6 @@
+The key difference is the data being passed to the executeQuery(...) method. In the first case,
+the parameterized string and the parameters are passed to the database separately, which allows the driver
+to correctly interpret them. In the second case, the full SQL statement is constructed before the driver is invoked,
+meaning we are vulnerable to maliciously crafted parameters.
+
+You should always use parameterized statements where available, they are your number one protection against SQL injection.
